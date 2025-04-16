@@ -1,0 +1,63 @@
+#Lstm without Quantum 
+
+Model Evaluation for AAPL: 
+MAE: 3.5651
+MSE: 21.9456
+RMSE: 4.6846
+R-squared: 0.9940
+
+Model Evaluation for AMZN:
+MAE: 3.3404
+MSE: 20.5693
+RMSE: 4.5353
+R-squared: 0.9874
+
+Model Evaluation for GOOGL: 
+MAE: 2.5885
+MSE: 12.0993
+RMSE: 3.4784
+R-squared: 0.9926
+
+Model Evaluation for TSLA:
+MAE: 8.4601
+MSE: 151.5163
+RMSE: 12.3092
+R-squared: 0.9884
+
+Model Evaluation for MSFT:
+MAE: 5.6077
+MSE: 56.9987
+RMSE: 7.5497
+R-squared: 0.9951
+
+#Lstm with Quantum
+
+Model Evaluation for AAPL:
+MAE: 3.8250
+MSE: 25.0257
+RMSE: 5.0026
+R-squared: 0.9931
+
+Model Evaluation for AMZN:
+MAE: 4.3436
+MSE: 31.9399
+RMSE: 5.6515
+R-squared: 0.9805
+
+Model Evaluation for TSLA:
+MAE: 10.6121
+MSE: 207.1239
+RMSE: 14.3918
+R-squared: 0.9842
+
+Model Evaluation for GOOGL:
+MAE: 2.5321
+MSE: 12.1192
+RMSE: 3.4813
+R-squared: 0.9926
+
+Model Evaluation for MSFT:
+MAE: 5.7630
+MSE: 62.3979
+RMSE: 7.8992
+R-squared: 0.9946

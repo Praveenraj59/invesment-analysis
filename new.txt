@@ -1,0 +1,10 @@
+Model Evaluation for M&M.NS:
+MAE: 43.4888
+MSE: 3466.8196
+RMSE: 58.8797
+R-squared: 0.9939
+Model Evaluation for HINDUNILVR.NS:
+MAE: 40.9740
+MSE: 2981.9968
+RMSE: 54.6077
+R-squared: 0.9793

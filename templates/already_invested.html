@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Already Invested</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center text-success mb-4">📊 Analyze Your Investment</h1>
+        <form action="/already_invested" method="POST" class="card p-4 shadow-sm bg-white rounded">
+            <div class="mb-3">
+                <label for="ticker" class="form-label">Select Your Stock:</label>
+                <select class="form-select" id="ticker" name="ticker" required>
+                    <option value="RELIANCE.NS">RELIANCE (RELIANCE.NS)</option>
+                    <option value="TCS.NS">TCS (TCS.NS)</option>
+                    <option value="INFY.NS">INFY (INFY.NS)</option>
+                    <option value="HDFCBANK.NS">HDFCBANK (HDFCBANK.NS)</option>
+                    <option value="ICICIBANK.NS">ICICIBANK (ICICIBANK.NS)</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="investment_amount" class="form-label">💰 Total Investment Amount (INR):</label>
+                <input type="number" class="form-control" id="investment_amount" name="investment_amount" placeholder="e.g., ₹10000" required>
+            </div>
+            <div class="mb-3">
+                <label for="purchase_price" class="form-label">💵 Purchase Price per Share (INR):</label>
+                <input type="number" class="form-control" id="purchase_price" name="purchase_price" placeholder="e.g., ₹150" required>
+            </div>
+            <div class="mb-3">
+                <label for="risk_tolerance" class="form-label">⚖️ Risk Tolerance:</label>
+                <select class="form-select" id="risk_tolerance" name="risk_tolerance" required>
+                    <option value="Low">Conservative (Low)</option>
+                    <option value="Medium">Moderate (Medium)</option>
+                    <option value="High">Aggressive (High)</option>
+
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success w-100">🔍 Analyze Investment</button>
+        </form>
+    </div>
+</body>
+</html>

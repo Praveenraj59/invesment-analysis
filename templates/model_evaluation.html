@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Evaluation Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        thead {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        #plotly-chart {
+            width: 90%;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 LSTM Model Evaluation Metrics</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Stock</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>RMSE</th>
+                <th>R² Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock, metrics in model_metrics.items() %}
+            <tr>
+                <td>{{ stock }}</td>
+                <td style="color: {{ 'green' if metrics.MAE < 40 else 'orange' if metrics.MAE < 80 else 'red' }}">{{ metrics.MAE }}</td>
+                <td>{{ metrics.MSE }}</td>
+                <td style="color: {{ 'green' if metrics.RMSE < 50 else 'orange' if metrics.RMSE < 100 else 'red' }}">{{ metrics.RMSE }}</td>
+                <td style="color: {{ 'green' if metrics.R2 > 0.99 else 'orange' if metrics.R2 > 0.97 else 'red' }}">{{ metrics.R2 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div id="plotly-chart"></div>
+    <script>
+        var graphData = {{ graph_json | safe }};
+        Plotly.newPlot('plotly-chart', graphData.data, graphData.layout);
+    </script>
+</body>
+</html>
